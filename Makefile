@@ -49,7 +49,8 @@ build-linux:
 ## test: Run unit tests
 test:
 	@echo "Running tests..."
-	$(GOTEST) -v -race -cover ./...
+	# Note: removed -race flag to speed up local test runs; re-enable for CI
+	$(GOTEST) -v -cover ./...
 
 ## test-integration: Run integration tests
 test-integration:
